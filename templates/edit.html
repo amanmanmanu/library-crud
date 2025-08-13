@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Edit Book</h2>
+  <form method="post" style="max-width:600px">
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <input name="title" value="{{ book.title }}" placeholder="Title (required)" required>
+      <input name="author" value="{{ book.author or '' }}" placeholder="Author">
+      <input name="year" value="{{ book.year or '' }}" placeholder="Year (number)">
+      <input name="isbn" value="{{ book.isbn or '' }}" placeholder="ISBN">
+      <div>
+        <button class="button" type="submit">Update</button>
+        <a href="{{ url_for('index') }}" style="margin-left:8px">Cancel</a>
+      </div>
+    </div>
+  </form>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Add New Book</h2>
+  <form method="post" style="max-width:600px">
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <input name="title" placeholder="Title (required)" required>
+      <input name="author" placeholder="Author">
+      <input name="year" placeholder="Year (number)">
+      <input name="isbn" placeholder="ISBN">
+      <div>
+        <button class="button" type="submit">Save</button>
+        <a href="{{ url_for('index') }}" style="margin-left:8px">Cancel</a>
+      </div>
+    </div>
+  </form>
+{% endblock %}
